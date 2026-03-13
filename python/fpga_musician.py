@@ -98,7 +98,7 @@ plt.savefig('output/effects_comparison.png', dpi=150)
 plt.close()
 print("  saved output/effects_comparison.png")
 
-# FFT showing harmonic content from distortion
+# FFT showing harmonic content from distortion, use chat for this because idc
 dry_hard = distortion(dry_a4, gain=4.0, mode='hard')
 fig, axes = plt.subplots(1, 3, figsize=(14, 4), sharey=True)
 fft_cases = [
