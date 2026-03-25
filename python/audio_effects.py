@@ -21,6 +21,14 @@ def tremolo(audio, rate_hz=5.0, depth=0.7):
     return (audio.astype(np.int32) * gain).clip(-Q15, Q15).astype(np.int16)
 
 
+def distortion_hls(audio, gain=4):
+    # matches what the FPGA actually does: multiply, clip, done
+    # no peak normalization because thats annoying in hardware
+    # use THIS one to compare against fpga output in jupyter, not distortion()
+    driven = audio.astype(np.int32) * gain
+    return driven.clip(-Q15, Q15).astype(np.int16)
+
+
 def distortion(audio, gain=3.0, mode='soft'):
     driven = audio.astype(np.int32) * gain / Q15  # normalize for tanh/clip
     if mode == 'soft':
