@@ -8,6 +8,7 @@ import wave
 import os
 
 SAMPLE_RATE = 48_000
+Q15 = 32767  # Q1.15 fixed-point scale: maps [-1.0, 1.0] to [-32767, 32767]
 
 
 def generate_tone(freq, duration, amplitude=0.85, attack_ms=5, release_ms=10):
@@ -22,12 +23,12 @@ def generate_tone(freq, duration, amplitude=0.85, attack_ms=5, release_ms=10):
     if atk > 0: env[:atk] = np.linspace(0, 1, atk)
     if rel > 0: env[-rel:] = np.linspace(1, 0, rel)
 
-    return (samples * env * amplitude).astype(np.float32)
+    return (samples * env * amplitude * Q15).astype(np.int16)
 
 
 def sequence_to_audio(events):
     total = int(events[-1]['time_off'] * SAMPLE_RATE)
-    audio = np.zeros(total, dtype=np.float32)
+    audio = np.zeros(total, dtype=np.int32)
     for ev in events:
         amp  = (ev['velocity'] / 127.0) * 0.9
         tone = generate_tone(ev['freq'], ev['time_off'] - ev['time_on'], amp)
@@ -35,14 +36,14 @@ def sequence_to_audio(events):
         end   = min(start + len(tone), total)
         audio[start:end] += tone[:end - start]
     peak = np.max(np.abs(audio))
-    if peak > 1.0:
-        audio /= peak
-    return audio
+    if peak > Q15:
+        audio = (audio * Q15 // peak)
+    return audio.clip(-Q15, Q15).astype(np.int16)
 
 
 def save_wav(path, audio):
     os.makedirs(os.path.dirname(path) if os.path.dirname(path) else '.', exist_ok=True)
-    pcm = (np.clip(audio, -1, 1) * 32767).astype(np.int16)
+    pcm = np.clip(audio, -Q15, Q15).astype(np.int16)
     with wave.open(path, 'wb') as wf:
         wf.setnchannels(1)
         wf.setsampwidth(2)
