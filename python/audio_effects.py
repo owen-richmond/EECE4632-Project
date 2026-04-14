@@ -48,6 +48,80 @@ def delay(audio, delay_ms=300.0, feedback=0.4, mix=0.5):
         buf[i + delay_samples] = int(audio[i] + delayed * feedback)
     return out.clip(-Q15, Q15).astype(np.int16)
 
+# ---- HLS-matching reference functions (used by pynq_test*.py on the board) ----
+# these replicate the exact fixed-point integer arithmetic from the C++ so you
+# can compare the FPGA output sample-for-sample and get a perfect match
+# distortion_hls skips the peak normalization that distortion() does, since
+# the FPGA cant do that without buffering the whole chunk and scanning it twice
+
+_SIN_LUT64 = [
+        0,  3211,  6392,  9511, 12539, 15446, 18204, 20787,
+    23169, 25329, 27244, 28897, 30272, 31356, 32137, 32609,
+    32767, 32609, 32137, 31356, 30272, 28897, 27244, 25329,
+    23169, 20787, 18204, 15446, 12539,  9511,  6392,  3211,
+        0, -3211, -6392, -9511,-12539,-15446,-18204,-20787,
+   -23169,-25329,-27244,-28897,-30272,-31356,-32137,-32609,
+   -32767,-32609,-32137,-31356,-30272,-28897,-27244,-25329,
+   -23169,-20787,-18204,-15446,-12539, -9511, -6392, -3211
+]
+_Q15_MAX = 32767
+_Q15_MIN = -32768
+
+
+def distortion_hls(audio, gain=1):
+    # hard clip only, no normalization -- matches distortion_top HLS bit-exactly
+    driven = audio.astype(np.int32) * np.int32(gain)
+    return driven.clip(_Q15_MIN, _Q15_MAX).astype(np.int16)
+
+
+# module-level state mirrors the C++ static variables so the LFO phase and
+# delay buffer stay continuous across 10ms chunks, same as they do on hardware
+_chain_phase = 0
+_chain_delay_buf = [0] * 12000
+_chain_wp = 0
+
+
+def chain_hls(audio, dist_gain=1, trem_rate_step=0, trem_depth_q15=0,
+              delay_n=1, feedback_q15=0, mix_q15=0):
+    # integer-exact replica of chain_top C++ (build1 & build2 give same result)
+    global _chain_phase, _chain_delay_buf, _chain_wp
+    MAX_DELAY_SAMP = 12000
+    N = len(audio)
+    mid1 = [0] * N
+    mid2 = [0] * N
+    out  = np.zeros(N, dtype=np.int16)
+
+    # stage 1: distortion
+    for i in range(N):
+        d = int(audio[i]) * dist_gain
+        mid1[i] = max(_Q15_MIN, min(_Q15_MAX, d))
+
+    # stage 2: tremolo
+    for i in range(N):
+        lfo_01 = (_SIN_LUT64[(_chain_phase >> 10) & 0x3F] + _Q15_MAX) >> 1
+        gq = (_Q15_MAX - trem_depth_q15) + ((trem_depth_q15 * lfo_01) >> 15)
+        s  = (mid1[i] * gq) >> 15
+        mid2[i] = max(_Q15_MIN, min(_Q15_MAX, s))
+        _chain_phase = (_chain_phase + trem_rate_step) & 0xFFFF
+
+    # stage 3: delay
+    dn = max(1, min(delay_n, MAX_DELAY_SAMP - 1))
+    for i in range(N):
+        rp = _chain_wp - dn
+        if rp < 0:
+            rp += MAX_DELAY_SAMP
+        delayed = _chain_delay_buf[rp]
+        dry = (mid2[i] * (_Q15_MAX - mix_q15)) >> 15
+        wet = (delayed  *             mix_q15)  >> 15
+        s   = dry + wet
+        out[i] = max(_Q15_MIN, min(_Q15_MAX, s))
+        fb = mid2[i] + ((delayed * feedback_q15) >> 15)
+        _chain_delay_buf[_chain_wp] = max(_Q15_MIN, min(_Q15_MAX, fb))
+        _chain_wp = (_chain_wp + 1) % MAX_DELAY_SAMP
+
+    return out
+
+
 # FFT HELPER TO VISUALIZE DISTORTION HARMONICS, NOT PART OF FPGA CHAIN
 def fft_db(audio):
     N   = len(audio)

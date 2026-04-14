@@ -41,6 +41,13 @@ def sequence_to_audio(events):
     return audio.clip(-Q15, Q15).astype(np.int16)
 
 
+def load_wav(path):
+    """load a 48kHz 16-bit mono WAV and return a np.int16 array"""
+    with wave.open(path, 'rb') as wf:
+        raw = wf.readframes(wf.getnframes())
+    return np.frombuffer(raw, dtype=np.int16).copy()
+
+
 def save_wav(path, audio):
     os.makedirs(os.path.dirname(path) if os.path.dirname(path) else '.', exist_ok=True)
     pcm = np.clip(audio, -Q15, Q15).astype(np.int16)
