@@ -136,4 +136,6 @@ plt.ylabel('amplitude (Q15)')
 plt.title(f'chain_top: dist(gain={DIST_GAIN}) -> tremolo(5Hz) -> delay(100ms) -- 440Hz A4')
 plt.legend()
 plt.tight_layout()
+plt.savefig('/home/xilinx/jupyter_notebooks/EECE4632-Project/output/chain_fpga_vs_python.png',
+            dpi=150, bbox_inches='tight')
 plt.show()

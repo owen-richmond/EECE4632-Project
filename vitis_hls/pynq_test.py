@@ -82,4 +82,6 @@ plt.ylabel('amplitude (Q15)')
 plt.title(f'distortion_top: gain={GAIN}, 440Hz A4')
 plt.legend()
 plt.tight_layout()
+plt.savefig('/home/xilinx/jupyter_notebooks/EECE4632-Project/output/distortion_fpga_vs_python.png',
+            dpi=150, bbox_inches='tight')
 plt.show()
