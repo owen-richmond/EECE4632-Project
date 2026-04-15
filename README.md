@@ -1,6 +1,6 @@
 # FPGA Musician GUIDE
 
-**Update (April 2026):** Build 1 (distortion + tremolo + delay chain, sequential pipelined loops) is synthesized and the Vivado block design is done. chain.bit and chain.hwh are in pynq_overlay alongside the original distortion files. Test scripts are in vitis_hls/ and expect everything to live in a folder called Preliminary_Project on the board. Build 2 (DATAFLOW version) is written and the C sim passes but hasn't been synthesized yet. See IMPLEMENTATION_GUIDE.md for the full setup walkthrough.
+**Update (April 2026) -- chain build is working on hardware.** To run it: upload everything in pynq_overlay/ (except the old/ folder and the .py files that aren't test scripts) into a folder called Preliminary_Project on the board, create a Preliminary_Project/output/ folder, then run pynq_test_chain.py cell by cell in Jupyter. Files you need: chain.bit, chain.hwh, audio_effects.py, tone_generator.py, pynq_test_chain.py. Ignore old/ (that's just the distortion-only bitstream for reference).
 
 ---
 
