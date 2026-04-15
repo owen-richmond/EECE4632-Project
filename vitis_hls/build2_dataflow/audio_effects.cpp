@@ -51,7 +51,7 @@ static void do_tremolo(sample_t in[NUM_SAMPLES], sample_t out[NUM_SAMPLES],
         acc_t s    = ((acc_t)in[i] * gq) >> 15;
         if      (s >  Q15_MAX) s =  Q15_MAX;
         else if (s <  Q15_MIN) s =  Q15_MIN;
-        out[i] = (sample_t)s;
+        out[i] = (depth_q15 == 0) ? in[i] : (sample_t)s;
         phase = (phase + rate_step) & 0xFFFF;
     }
 }
@@ -75,7 +75,7 @@ static void do_delay(sample_t in[NUM_SAMPLES], sample_t out[NUM_SAMPLES],
         acc_t s   = dry + wet;
         if      (s >  Q15_MAX) s =  Q15_MAX;
         else if (s <  Q15_MIN) s =  Q15_MIN;
-        out[i] = (sample_t)s;
+        out[i] = (mix_q15 == 0) ? in[i] : (sample_t)s;
         acc_t fb = (acc_t)in[i] + (delayed * feedback_q15 >> 15);
         if      (fb >  Q15_MAX) fb =  Q15_MAX;
         else if (fb <  Q15_MIN) fb =  Q15_MIN;

@@ -1,0 +1,259 @@
+
+
+================================================================
+== Synthesis Summary Report of 'chain_top'
+================================================================
++ General Information: 
+    * Date:           Tue Apr 14 22:15:19 2026
+    * Version:        2024.1 (Build 5069499 on May 21 2024)
+    * Project:        distortion_top
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynquplus
+    * Target device:  xczu3eg-sfvc784-2-e
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-----------+-----------+-----+
+    |              Modules             | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |         |         |           |           |     |
+    |              & Loops             | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM   |   DSP   |     FF    |    LUT    | URAM|
+    +----------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-----------+-----------+-----+
+    |+ chain_top                       |     -|  0.00|     1469|  1.469e+04|         -|     1470|     -|        no|  19 (4%)|  12 (3%)|  2246 (1%)|  3249 (4%)|    -|
+    | + chain_top_Pipeline_DIST_LOOP   |     -|  0.00|      483|  4.830e+03|         -|      483|     -|        no|        -|  2 (~0%)|   48 (~0%)|  198 (~0%)|    -|
+    |  o DIST_LOOP                     |     -|  7.30|      481|  4.810e+03|         3|        1|   480|       yes|        -|        -|          -|          -|    -|
+    | + chain_top_Pipeline_TREM_LOOP   |     -|  0.77|      483|  4.830e+03|         -|      483|     -|        no|  1 (~0%)|   4 (1%)|  160 (~0%)|  335 (~0%)|    -|
+    |  o TREM_LOOP                     |     -|  7.30|      481|  4.810e+03|         3|        1|   480|       yes|        -|        -|          -|          -|    -|
+    | + chain_top_Pipeline_DELAY_LOOP  |     -|  0.00|      484|  4.840e+03|         -|      484|     -|        no|  14 (3%)|   6 (1%)|  334 (~0%)|  630 (~0%)|    -|
+    |  o DELAY_LOOP                    |     -|  7.30|      482|  4.820e+03|         4|        1|   480|       yes|        -|        -|          -|          -|    -|
+    +----------------------------------+------+------+---------+-----------+----------+---------+------+----------+---------+---------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-----------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|           |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-----------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_MEM | READ_WRITE | 16 -> 16   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=2            |
++-----------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_CTRL    | 32         | 6             | 16     | 0        |
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register       | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL    | CTRL           | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL    | GIER           | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL    | IP_IER         | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL    | IP_ISR         | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL    | dist_gain      | 0x10   | 32    | W      | Data signal of dist_gain         |                                                                      |
+| s_axi_CTRL    | trem_rate_step | 0x18   | 32    | W      | Data signal of trem_rate_step    |                                                                      |
+| s_axi_CTRL    | trem_depth_q15 | 0x20   | 32    | W      | Data signal of trem_depth_q15    |                                                                      |
+| s_axi_CTRL    | delay_n        | 0x28   | 32    | W      | Data signal of delay_n           |                                                                      |
+| s_axi_CTRL    | feedback_q15   | 0x30   | 32    | W      | Data signal of feedback_q15      |                                                                      |
+| s_axi_CTRL    | mix_q15        | 0x38   | 32    | W      | Data signal of mix_q15           |                                                                      |
+| s_axi_control | in_samples_1   | 0x10   | 32    | W      | Data signal of in_samples        |                                                                      |
+| s_axi_control | in_samples_2   | 0x14   | 32    | W      | Data signal of in_samples        |                                                                      |
+| s_axi_control | out_samples_1  | 0x1c   | 32    | W      | Data signal of out_samples       |                                                                      |
+| s_axi_control | out_samples_2  | 0x20   | 32    | W      | Data signal of out_samples       |                                                                      |
++---------------+----------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------------+-----------+-------------+
+| Argument       | Direction | Datatype    |
++----------------+-----------+-------------+
+| in_samples     | inout     | ap_int<16>* |
+| out_samples    | inout     | ap_int<16>* |
+| dist_gain      | in        | int         |
+| trem_rate_step | in        | int         |
+| trem_depth_q15 | in        | int         |
+| delay_n        | in        | int         |
+| feedback_q15   | in        | int         |
+| mix_q15        | in        | int         |
++----------------+-----------+-------------+
+
+* SW-to-HW Mapping
++----------------+---------------+-----------+----------+------------------------------------------+
+| Argument       | HW Interface  | HW Type   | HW Usage | HW Info                                  |
++----------------+---------------+-----------+----------+------------------------------------------+
+| in_samples     | m_axi_MEM     | interface |          | channel=0                                |
+| in_samples     | s_axi_control | register  | offset   | name=in_samples_1 offset=0x10 range=32   |
+| in_samples     | s_axi_control | register  | offset   | name=in_samples_2 offset=0x14 range=32   |
+| out_samples    | m_axi_MEM     | interface |          | channel=0                                |
+| out_samples    | s_axi_control | register  | offset   | name=out_samples_1 offset=0x1c range=32  |
+| out_samples    | s_axi_control | register  | offset   | name=out_samples_2 offset=0x20 range=32  |
+| dist_gain      | s_axi_CTRL    | register  |          | name=dist_gain offset=0x10 range=32      |
+| trem_rate_step | s_axi_CTRL    | register  |          | name=trem_rate_step offset=0x18 range=32 |
+| trem_depth_q15 | s_axi_CTRL    | register  |          | name=trem_depth_q15 offset=0x20 range=32 |
+| delay_n        | s_axi_CTRL    | register  |          | name=delay_n offset=0x28 range=32        |
+| feedback_q15   | s_axi_CTRL    | register  |          | name=feedback_q15 offset=0x30 range=32   |
+| mix_q15        | s_axi_CTRL    | register  |          | name=mix_q15 offset=0x38 range=32        |
++----------------+---------------+-----------+----------+------------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+--------+-------+------------+-------------------------------------------------------------------------------------------+
+| HW Interface | Direction | Length | Width | Loop       | Loop Location                                                                             |
++--------------+-----------+--------+-------+------------+-------------------------------------------------------------------------------------------+
+| m_axi_MEM    | read      | 480    | 16    | DIST_LOOP  | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45:16 |
+| m_axi_MEM    | write     | 480    | 16    | DELAY_LOOP | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79:17 |
++--------------+-----------+--------+-------+------------+-------------------------------------------------------------------------------------------+
+
+* All M_AXI Variable Accesses
++--------------+-------------+-------------------------------------------------------------------------------------------+-----------+--------------+--------+------------+-------------------------------------------------------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable    | Access Location                                                                           | Direction | Burst Status | Length | Loop       | Loop Location                                                                             | Resolution | Problem                                                                                               |
++--------------+-------------+-------------------------------------------------------------------------------------------+-----------+--------------+--------+------------+-------------------------------------------------------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+| m_axi_MEM    | in_samples  | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:47:12 | read      | Widen Fail   |        | DIST_LOOP  | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45:16 | 214-353    | Could not widen since type i16 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_MEM    | in_samples  | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:47:12 | read      | Inferred     | 480    | DIST_LOOP  | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45:16 |            |                                                                                                       |
+| m_axi_MEM    | out_samples | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92:24 | write     | Widen Fail   |        | DELAY_LOOP | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79:17 | 214-353    | Could not widen since type i16 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_MEM    | out_samples | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92:24 | write     | Inferred     | 480    | DELAY_LOOP | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79:17 |            |                                                                                                       |
++--------------+-------------+-------------------------------------------------------------------------------------------+-----------+--------------+--------+------------+-------------------------------------------------------------------------------------------+------------+-------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.1%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------+-----+--------+---------------+--------+----------+---------+
+| Name                             | DSP | Pragma | Variable      | Op     | Impl     | Latency |
++----------------------------------+-----+--------+---------------+--------+----------+---------+
+| + chain_top                      | 12  |        |               |        |          |         |
+|   sub_fu_309_p2                  |     |        | sub           | sub    | fabric   | 0       |
+|   cmp37_fu_315_p2                |     |        | cmp37         | seteq  | auto     | 0       |
+|   icmp_ln77_fu_255_p2            |     |        | icmp_ln77     | setlt  | auto     | 0       |
+|   icmp_ln77_1_fu_261_p2          |     |        | icmp_ln77_1   | setgt  | auto     | 0       |
+|   select_ln77_fu_267_p3          |     |        | select_ln77   | select | auto_sel | 0       |
+|   or_ln77_fu_275_p2              |     |        | or_ln77       | or     | auto     | 0       |
+|   dn_fu_281_p3                   |     |        | dn            | select | auto_sel | 0       |
+|   sub73_fu_336_p2                |     |        | sub73         | sub    | fabric   | 0       |
+|   cmp88_fu_342_p2                |     |        | cmp88         | seteq  | auto     | 0       |
+|  + chain_top_Pipeline_DIST_LOOP  | 2   |        |               |        |          |         |
+|    icmp_ln45_fu_118_p2           |     |        | icmp_ln45     | seteq  | auto     | 0       |
+|    add_ln45_fu_124_p2            |     |        | add_ln45      | add    | fabric   | 0       |
+|    mul_16s_32s_32_1_1_U1         | 2   |        | d             | mul    | auto     | 0       |
+|    icmp_ln48_fu_159_p2           |     |        | icmp_ln48     | setgt  | auto     | 0       |
+|    icmp_ln49_fu_165_p2           |     |        | icmp_ln49     | setlt  | auto     | 0       |
+|    select_ln50_fu_175_p3         |     |        | select_ln50   | select | auto_sel | 0       |
+|    or_ln50_fu_183_p2             |     |        | or_ln50       | or     | auto     | 0       |
+|    select_ln50_1_fu_189_p3       |     |        | select_ln50_1 | select | auto_sel | 0       |
+|  + chain_top_Pipeline_TREM_LOOP  | 4   |        |               |        |          |         |
+|    icmp_ln57_fu_196_p2           |     |        | icmp_ln57     | seteq  | auto     | 0       |
+|    add_ln57_fu_202_p2            |     |        | add_ln57      | add    | fabric   | 0       |
+|    add_ln59_fu_252_p2            |     |        | add_ln59      | add    | fabric   | 0       |
+|    mul_32s_15ns_47_1_1_U7        | 2   |        | mul_ln60      | mul    | auto     | 0       |
+|    gq_fu_283_p2                  |     |        | gq            | add    | fabric   | 0       |
+|    mul_32s_16s_47_1_1_U8         | 2   |        | mul_ln61      | mul    | auto     | 0       |
+|    icmp_ln62_fu_316_p2           |     |        | icmp_ln62     | setgt  | auto     | 0       |
+|    icmp_ln63_fu_322_p2           |     |        | icmp_ln63     | setlt  | auto     | 0       |
+|    select_ln66_fu_338_p3         |     |        | select_ln66   | select | auto_sel | 0       |
+|    or_ln66_fu_346_p2             |     |        | or_ln66       | or     | auto     | 0       |
+|    select_ln66_1_fu_352_p3       |     |        | select_ln66_1 | select | auto_sel | 0       |
+|    select_ln66_2_fu_360_p3       |     |        | select_ln66_2 | select | auto_sel | 0       |
+|    add_ln67_fu_231_p2            |     |        | add_ln67      | add    | fabric   | 0       |
+|  + chain_top_Pipeline_DELAY_LOOP | 6   |        |               |        |          |         |
+|    icmp_ln79_fu_256_p2           |     |        | icmp_ln79     | seteq  | auto     | 0       |
+|    add_ln79_fu_262_p2            |     |        | add_ln79      | add    | fabric   | 0       |
+|    rp_fu_276_p2                  |     |        | rp            | sub    | fabric   | 0       |
+|    add_ln83_fu_293_p2            |     |        | add_ln83      | add    | fabric   | 0       |
+|    rp_1_fu_299_p3                |     |        | rp_1          | select | auto_sel | 0       |
+|    mul_32s_16s_47_1_1_U20        | 2   |        | mul_ln85      | mul    | auto     | 0       |
+|    mul_32s_16s_47_1_1_U21        | 2   |        | mul_ln86      | mul    | auto     | 0       |
+|    s_fu_377_p2                   |     |        | s             | add    | fabric   | 0       |
+|    icmp_ln88_fu_393_p2           |     |        | icmp_ln88     | setgt  | auto     | 0       |
+|    icmp_ln89_fu_399_p2           |     |        | icmp_ln89     | setlt  | auto     | 0       |
+|    select_ln92_fu_409_p3         |     |        | select_ln92   | select | auto_sel | 0       |
+|    or_ln92_fu_417_p2             |     |        | or_ln92       | or     | auto     | 0       |
+|    select_ln92_1_fu_423_p3       |     |        | select_ln92_1 | select | auto_sel | 0       |
+|    select_ln92_2_fu_495_p3       |     |        | select_ln92_2 | select | auto_sel | 0       |
+|    mul_32s_16s_47_1_1_U22        | 2   |        | mul_ln93      | mul    | auto     | 0       |
+|    fb_fu_441_p2                  |     |        | fb            | add    | fabric   | 0       |
+|    icmp_ln94_fu_457_p2           |     |        | icmp_ln94     | setgt  | auto     | 0       |
+|    icmp_ln95_fu_463_p2           |     |        | icmp_ln95     | setlt  | auto     | 0       |
+|    select_ln96_fu_473_p3         |     |        | select_ln96   | select | auto_sel | 0       |
+|    or_ln96_fu_481_p2             |     |        | or_ln96       | or     | auto     | 0       |
+|    select_ln96_1_fu_487_p3       |     |        | select_ln96_1 | select | auto_sel | 0       |
+|    add_ln97_fu_312_p2            |     |        | add_ln97      | add    | fabric   | 0       |
+|    icmp_ln97_fu_318_p2           |     |        | icmp_ln97     | setgt  | auto     | 0       |
+|    select_ln97_fu_324_p3         |     |        | select_ln97   | select | auto_sel | 0       |
++----------------------------------+-----+--------+---------------+--------+----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+| Name                             | Usage        | Type      | BRAM | URAM | Pragma | Variable  | Impl | Latency | Bitwidth, Depth, |
+|                                  |              |           |      |      |        |           |      |         | Banks            |
++----------------------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+| + chain_top                      |              |           | 19   | 0    |        |           |      |         |                  |
+|   CTRL_s_axi_U                   | interface    | s_axilite |      |      |        |           |      |         |                  |
+|   control_s_axi_U                | interface    | s_axilite |      |      |        |           |      |         |                  |
+|   MEM_m_axi_U                    | interface    | m_axi     | 2    |      |        |           |      |         |                  |
+|   mid1_U                         | ram_1p array |           | 1    |      |        | mid1      | auto | 1       | 16, 480, 1       |
+|   mid2_U                         | ram_1p array |           | 1    |      |        | mid2      | auto | 1       | 16, 480, 1       |
+|  + chain_top_Pipeline_TREM_LOOP  |              |           | 1    | 0    |        |           |      |         |                  |
+|    SIN_LUT64_U                   | rom_1p       |           | 1    |      |        | SIN_LUT64 | auto | 1       | 16, 64, 1        |
+|  + chain_top_Pipeline_DELAY_LOOP |              |           | 14   | 0    |        |           |      |         |                  |
+|    delay_buf_U                   | ram_2p       |           | 14   |      | pragma | delay_buf | bram | 1       | 16, 12000, 1     |
++----------------------------------+--------------+-----------+------+------+--------+-----------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Pragmas with Warnings
++----------+-------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| Type     | Options                             | Location                                                                                                       | Messages                                                                   |
++----------+-------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+| resource | variable=delay_buf core=RAM_2P_BRAM | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:75 in chain_top, delay_buf | 'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead |
++----------+-------------------------------------+----------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
+
+* Valid Pragma Syntax
++------------+----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| Type       | Options                                                  | Location                                                                                                            |
++------------+----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+| interface  | s_axilite port=return bundle=CTRL                        | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:30 in chain_top, return         |
+| interface  | s_axilite port=dist_gain bundle=CTRL                     | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:31 in chain_top, dist_gain      |
+| interface  | s_axilite port=trem_rate_step bundle=CTRL                | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:32 in chain_top, trem_rate_step |
+| interface  | s_axilite port=trem_depth_q15 bundle=CTRL                | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:33 in chain_top, trem_depth_q15 |
+| interface  | s_axilite port=delay_n bundle=CTRL                       | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:34 in chain_top, delay_n        |
+| interface  | s_axilite port=feedback_q15 bundle=CTRL                  | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:35 in chain_top, feedback_q15   |
+| interface  | s_axilite port=mix_q15 bundle=CTRL                       | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:36 in chain_top, mix_q15        |
+| interface  | m_axi depth=480 port=in_samples offset=slave bundle=MEM  | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:37 in chain_top, in_samples     |
+| interface  | m_axi depth=480 port=out_samples offset=slave bundle=MEM | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:38 in chain_top, out_samples    |
+| pipeline   | II=1                                                     | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:46 in chain_top                 |
+| pipeline   | II=1                                                     | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:58 in chain_top                 |
+| pipeline   |                                                          | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:80 in chain_top                 |
+| dependence | variable=delay_buf inter false                           | ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:81 in chain_top, delay_buf      |
++------------+----------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
+
+

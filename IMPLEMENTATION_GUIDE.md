@@ -11,9 +11,12 @@ python/
     tone_generator.py      WAV synthesis, load_wav, save_wav
     fpga_musician.py       demo script, run this first
 vitis_hls/
-    audio_effects.{h,cpp,_tb.cpp}    distortion_top (working, bitstream already built)
+    Pervious iteration (project update 2)/
+        audio_effects.{h,cpp,_tb.cpp}    original distortion_top (bitstream already built)
     build1_pipeline/                 chain_top, 3 sequential loops
     build2_dataflow/                 chain_top, 3 sub-functions + DATAFLOW pragma
+    pynq_test.py                     distortion board test
+    pynq_test_chain.py               chain board test
 pynq_overlay/
     distortion.bit / distortion.hwh  pre-built, ready to upload
 ```
@@ -59,8 +62,8 @@ Do this once for each of the three builds. The process is identical, only the so
 |-------|---------------|--------------|--------------|
 | Project name | `distortion_top` | `chain_build1` | `chain_build2` |
 | Top function | `distortion_top` | `chain_top` | `chain_top` |
-| Source file | `vitis_hls/audio_effects.cpp` | `vitis_hls/build1_pipeline/audio_effects.cpp` | `vitis_hls/build2_dataflow/audio_effects.cpp` |
-| Testbench | `vitis_hls/audio_effects_tb.cpp` | `vitis_hls/build1_pipeline/audio_effects_tb.cpp` | `vitis_hls/build2_dataflow/audio_effects_tb.cpp` |
+| Source file | `vitis_hls/Pervious iteration (project update 2)/audio_effects.cpp` | `vitis_hls/build1_pipeline/audio_effects.cpp` | `vitis_hls/build2_dataflow/audio_effects.cpp` |
+| Testbench | `vitis_hls/Pervious iteration (project update 2)/audio_effects_tb.cpp` | `vitis_hls/build1_pipeline/audio_effects_tb.cpp` | `vitis_hls/build2_dataflow/audio_effects_tb.cpp` |
 
 Put all three projects in the same workspace folder, e.g. `C:\Users\owens\vitis_workspace\`.
 
@@ -161,12 +164,13 @@ Login: `xilinx` / `xilinx`
 In JupyterLab, create `/home/xilinx/jupyter_notebooks/EECE4632-Project/` and upload:
 - `python/` folder (all files)
 - `pynq_overlay/distortion.bit` and `distortion.hwh` (and chain files when ready)
-- `vitis_hls/pynq_test.py` and `pynq_test_chain.py`
+- `vitis_hls/pynq_test.py` and `vitis_hls/pynq_test_chain.py`
 
 Or use SCP:
 ```bash
 scp -r python/ xilinx@192.168.3.1:/home/xilinx/jupyter_notebooks/EECE4632-Project/
 scp pynq_overlay/distortion.bit pynq_overlay/distortion.hwh xilinx@192.168.3.1:/home/xilinx/jupyter_notebooks/EECE4632-Project/
+scp vitis_hls/pynq_test.py vitis_hls/pynq_test_chain.py xilinx@192.168.3.1:/home/xilinx/jupyter_notebooks/EECE4632-Project/
 ```
 
 Create the output directory on the board:
@@ -214,4 +218,4 @@ Expected result: `PERFECT MATCH (480/480 samples)` and `output/chain_fpga_vs_pyt
 
 **Results not bit-exact** -- Verify you're calling `distortion_hls()` not `distortion()` (the regular one normalizes the peak, which the FPGA doesn't do). For the chain, verify `chain_hls()` state globals haven't been called previously in the same Python session with different parameters.
 
-**ImportError for tone_generator or audio_effects on the board** -- The `sys.path.insert` in the test scripts points to `/home/xilinx/jupyter_notebooks/EECE4632-Project/python`. The `python/` folder needs to be there with that exact name.
+**ImportError for tone_generator or audio_effects on the board** -- The `sys.path.insert` in the test scripts points to `/home/xilinx/jupyter_notebooks/EECE4632-Project` (the project root, not a subdirectory). `tone_generator.py` and `audio_effects.py` must be uploaded directly into that folder, not inside a `python/` subfolder.

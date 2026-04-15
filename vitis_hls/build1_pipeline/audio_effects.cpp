@@ -61,7 +61,9 @@ void chain_top(sample_t in_samples[NUM_SAMPLES],
         acc_t s    = ((acc_t)mid1[i] * gq) >> 15;
         if      (s >  Q15_MAX) s =  Q15_MAX;
         else if (s <  Q15_MIN) s =  Q15_MIN;
-        mid2[i] = (sample_t)s;
+        // depth=0 means no effect -- bypass the multiply so Q15 rounding
+        // doesn't silently attenuate the signal by 1 LSB
+        mid2[i] = (trem_depth_q15 == 0) ? mid1[i] : (sample_t)s;
         phase = (phase + trem_rate_step) & 0xFFFF;
     }
 
@@ -85,7 +87,9 @@ void chain_top(sample_t in_samples[NUM_SAMPLES],
         acc_t s   = dry + wet;
         if      (s >  Q15_MAX) s =  Q15_MAX;
         else if (s <  Q15_MIN) s =  Q15_MIN;
-        out_samples[i] = (sample_t)s;
+        // mix=0 means all dry -- bypass the wet/dry math for the same reason
+        // as the tremolo bypass: Q15_MAX * x >> 15 truncates, not bypasses
+        out_samples[i] = (mix_q15 == 0) ? mid2[i] : (sample_t)s;
         acc_t fb = (acc_t)mid2[i] + (delayed * feedback_q15 >> 15);
         if      (fb >  Q15_MAX) fb =  Q15_MAX;
         else if (fb <  Q15_MIN) fb =  Q15_MIN;

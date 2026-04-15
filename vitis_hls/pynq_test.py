@@ -11,12 +11,12 @@ import numpy as np
 import sys, time
 from pynq import Overlay, allocate, MMIO
 
-sys.path.insert(0, '/home/xilinx/jupyter_notebooks/EECE4632-Project')
+sys.path.insert(0, '/home/xilinx/jupyter_notebooks/Preliminary_Project')
 from tone_generator import generate_tone
 from audio_effects import distortion_hls
 
 # ---- cell 2: load the overlay ----
-ol = Overlay('/home/xilinx/jupyter_notebooks/EECE4632-Project/distortion.bit')
+ol = Overlay('/home/xilinx/jupyter_notebooks/Preliminary_Project/distortion.bit')
 print("IPs found:", list(ol.ip_dict.keys()))
 
 # ---- cell 3: grab both AXI interfaces ----
@@ -82,6 +82,6 @@ plt.ylabel('amplitude (Q15)')
 plt.title(f'distortion_top: gain={GAIN}, 440Hz A4')
 plt.legend()
 plt.tight_layout()
-plt.savefig('/home/xilinx/jupyter_notebooks/EECE4632-Project/output/distortion_fpga_vs_python.png',
+plt.savefig('/home/xilinx/jupyter_notebooks/Preliminary_Project/output/distortion_fpga_vs_python.png',
             dpi=150, bbox_inches='tight')
 plt.show()

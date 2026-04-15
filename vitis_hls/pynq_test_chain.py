@@ -8,12 +8,12 @@ import numpy as np
 import sys, time
 from pynq import Overlay, allocate, MMIO
 
-sys.path.insert(0, '/home/xilinx/jupyter_notebooks/EECE4632-Project')
+sys.path.insert(0, '/home/xilinx/jupyter_notebooks/Preliminary_Project')
 from tone_generator import generate_tone, load_wav, save_wav, SAMPLE_RATE
 from audio_effects  import chain_hls
 
 # ---- cell 2: load the overlay (update path once you have the bitstream) ----
-ol = Overlay('/home/xilinx/jupyter_notebooks/EECE4632-Project/chain.bit')
+ol = Overlay('/home/xilinx/jupyter_notebooks/Preliminary_Project/chain.bit')
 print("IPs found:", list(ol.ip_dict.keys()))
 
 # ---- cell 3: grab AXI interfaces (same pattern as distortion build) ----
@@ -27,7 +27,7 @@ USE_WAV = False   # flip to True to load a real audio file instead
 if USE_WAV:
     # load a WAV and grab one 10ms chunk from the middle of it
     # put your audio file on the board and update the path
-    audio_full = load_wav('/home/xilinx/jupyter_notebooks/EECE4632-Project/sample.wav')
+    audio_full = load_wav('/home/xilinx/jupyter_notebooks/Preliminary_Project/sample.wav')
     start = len(audio_full) // 4   # grab from quarter-way in so it isnt silence
     in_data = audio_full[start : start + NUM_SAMPLES]
     if len(in_data) < NUM_SAMPLES:
@@ -118,9 +118,9 @@ print("Python reference (should sound identical):")
 display(Audio(to_float(golden), rate=SAMPLE_RATE))
 
 # save wav files so you can compare in audacity too
-save_wav('/home/xilinx/jupyter_notebooks/EECE4632-Project/output/fpga_chain_out.wav',
+save_wav('/home/xilinx/jupyter_notebooks/Preliminary_Project/output/fpga_chain_out.wav',
          np.array(out_buf, dtype=np.int16))
-save_wav('/home/xilinx/jupyter_notebooks/EECE4632-Project/output/python_chain_out.wav',
+save_wav('/home/xilinx/jupyter_notebooks/Preliminary_Project/output/python_chain_out.wav',
          golden)
 
 # ---- cell 10: plot ----
@@ -136,6 +136,6 @@ plt.ylabel('amplitude (Q15)')
 plt.title(f'chain_top: dist(gain={DIST_GAIN}) -> tremolo(5Hz) -> delay(100ms) -- 440Hz A4')
 plt.legend()
 plt.tight_layout()
-plt.savefig('/home/xilinx/jupyter_notebooks/EECE4632-Project/output/chain_fpga_vs_python.png',
+plt.savefig('/home/xilinx/jupyter_notebooks/Preliminary_Project/output/chain_fpga_vs_python.png',
             dpi=150, bbox_inches='tight')
 plt.show()
