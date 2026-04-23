@@ -1,0 +1,44 @@
+FPGA Musician -- Hardware Test Results
+Date: 2103-11-05 09:11:21
+==============================================================
+
+build1_pipeline
+Build 1 -- Sequential (3 loops, no DATAFLOW)
+------------------------------------------
+  Bit-exact match (1 chunk):    PASS
+  State continuity (10 chunks): PASS
+  Latency median:  37.3 us
+  Latency mean:    37.8 us
+  % of 10ms budget: 0.373%
+
+build2_dataflow
+Build 2 -- DATAFLOW (concurrent stages, ping-pong BRAMs)
+------------------------------------------
+  Bit-exact match (1 chunk):    PASS
+  State continuity (10 chunks): PASS
+  Latency median:  37.5 us
+  Latency mean:    37.7 us
+  % of 10ms budget: 0.375%
+
+HLS SYNTHESIS REFERENCE (from csynth.rpt)
+------------------------------------------
+  Metric                      Build 1      Build 2
+  Latency (cycles)              1,469        1,469
+  Interval / II                 1,470          493
+  BRAM                        19 (4%)      19 (4%)
+  DSP                         12 (3%)      12 (3%)
+  LUT                      3,249 (4%)   3,911 (5%)
+  FF                       2,246 (1%)   3,134 (2%)
+
+  Note: DATAFLOW improved II (throughput) ~3x, latency unchanged.
+  Wall-clock test (wait AP_DONE per chunk) measures latency, not II.
+  Expect similar measured times for both builds.
+
+MEASURED COMPARISON
+------------------------------------------
+  Metric                            Build 1    Build 2
+  Median latency (us)                 37.3       37.5
+  % of 10ms budget                   0.373%      0.375%
+  Measured speedup (B1/B2)                —      0.99x
+  Bit-exact match                      PASS       PASS
+  State continuity                     PASS       PASS
