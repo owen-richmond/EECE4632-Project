@@ -6,7 +6,7 @@ Real-time audio effects chain (distortion, tremolo, delay) running on the PL of 
 
 ## What's in this repo
 
-- `python/` and `pynq_overlay/audio_effects.py` -- Python reference. The `_hls` variants match the hardware arithmetic sample for sample.
+- `python/` -- Python reference (`audio_effects.py`, `tone_generator.py`, `fpga_musician.py`). The `_hls` variants in `audio_effects.py` match the hardware arithmetic sample for sample.
 - `vitis_hls/build1_pipeline/` -- Build 1 HLS source, testbench, synthesis reports.
 - `vitis_hls/build2_dataflow/` -- Build 2 HLS source, testbench, synthesis reports.
 - `vitis_hls/Pervious iteration (project update 2)/` -- the original standalone distortion IP, kept for reference.
@@ -25,15 +25,18 @@ WAV files land in `output/`. Use `distortion_hls()` (not `distortion()`) if you 
 
 ## Running on the board
 
-Upload the contents of `pynq_overlay/` (skip `old/`) into a folder called `Preliminary_Project/` on the AUP-ZU3. The files you actually need are:
+Upload the following files into **`/home/xilinx/jupyter_notebooks/Preliminary_Project/`** on the AUP-ZU3 (this exact path is hardcoded in `run_test.py`):
 
-- `chain.bit`, `chain.hwh` (Build 1)
-- `chain2.bit`, `chain2.hwh` (Build 2)
-- `audio_effects.py`, `tone_generator.py`
-- `run_test.py`
-- `test_tone.wav` (optional; otherwise a synthetic 440 Hz sine is generated)
+| File | Source in repo |
+|------|----------------|
+| `chain.bit`, `chain.hwh` (Build 1) | `pynq_overlay/` |
+| `chain2.bit`, `chain2.hwh` (Build 2) | `pynq_overlay/` |
+| `run_test.py` | `pynq_overlay/` |
+| `audio_effects.py` | `python/` |
+| `tone_generator.py` | `python/` |
+| `test_tone.wav` *(optional — synthetic 440 Hz sine used if absent)* | user-supplied |
 
-Then run `run_test.py` from Jupyter. It loads each bitstream in turn, verifies bit-exact match against the Python reference for one chunk and for ten consecutive chunks, measures median and minimum latency over 300 chunks, attempts DATAFLOW-style pipelining, and dumps a report to `output/test_results.txt`. Both `output_build1_pipeline.wav` and `output_build2_dataflow.wav` are written alongside it.
+Then run `run_test.py` from Jupyter on the board. It loads each bitstream in turn, verifies bit-exact match against the Python reference for one chunk and for ten consecutive chunks, measures median and minimum latency over 300 chunks, attempts DATAFLOW-style pipelining, and dumps a report to `output/test_results.txt`. Both `output_build1_pipeline.wav` and `output_build2_dataflow.wav` are written alongside it.
 
 ## Results
 

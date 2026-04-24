@@ -1,0 +1,1760 @@
+<profile>
+    <ReportVersion>
+        <Version>2024.1</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>zynquplus</ProductFamily>
+        <Part>xczu3eg-sfvc784-2-e</Part>
+        <TopModelName>chain_top</TopModelName>
+        <TargetClockPeriod>10.00</TargetClockPeriod>
+        <ClockUncertainty>2.70</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>1469</Best-caseLatency>
+            <Average-caseLatency>1469</Average-caseLatency>
+            <Worst-caseLatency>1469</Worst-caseLatency>
+            <Best-caseRealTimeLatency>14.690 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>14.690 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>14.690 us</Worst-caseRealTimeLatency>
+            <Interval-min>1470</Interval-min>
+            <Interval-max>1470</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfViolations>
+            <IssueType>-</IssueType>
+            <ViolationType>-</ViolationType>
+            <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:25</SourceLocation>
+        </SummaryOfViolations>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>19</BRAM_18K>
+            <DSP>12</DSP>
+            <FF>2246</FF>
+            <LUT>3249</LUT>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>432</BRAM_18K>
+            <DSP>360</DSP>
+            <FF>141120</FF>
+            <LUT>70560</LUT>
+            <URAM>0</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>s_axi_CTRL_AWVALID</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_AWREADY</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_AWADDR</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WVALID</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WREADY</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WDATA</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_WSTRB</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_ARVALID</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_ARREADY</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_ARADDR</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RVALID</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RREADY</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RDATA</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_RRESP</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_BVALID</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_BREADY</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_CTRL_BRESP</name>
+            <Object>CTRL</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_AWVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_AWREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_AWADDR</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WDATA</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_WSTRB</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_ARVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_ARREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_ARADDR</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>6</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RDATA</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_RRESP</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_BVALID</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_BREADY</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>s_axi_control_BRESP</name>
+            <Object>control</Object>
+            <Type>scalar</Type>
+            <IOProtocol>s_axi</IOProtocol>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+            <HasCtrl>0</HasCtrl>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>chain_top</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_rst_n</name>
+            <Object>chain_top</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>interrupt</name>
+            <Object>chain_top</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWVALID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWREADY</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWADDR</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>64</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWLEN</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWSIZE</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWBURST</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWLOCK</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWCACHE</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWPROT</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWQOS</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWREGION</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_AWUSER</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_WVALID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_WREADY</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_WDATA</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_WSTRB</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_WLAST</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_WID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_WUSER</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARVALID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARREADY</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARADDR</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>64</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARLEN</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>8</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARSIZE</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARBURST</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARLOCK</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARCACHE</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARPROT</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>3</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARQOS</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARREGION</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>4</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_ARUSER</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_RVALID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_RREADY</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_RDATA</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_RLAST</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_RID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_RUSER</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_RRESP</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_BVALID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_BREADY</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_BRESP</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>2</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_BID</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>m_axi_MEM_BUSER</name>
+            <Object>MEM</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>m_axi</IOProtocol>
+            <IOConfig/>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="3">
+            <ModuleName>chain_top</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_chain_top_Pipeline_DIST_LOOP_fu_197</InstName>
+                    <ModuleName>chain_top_Pipeline_DIST_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>197</ID>
+                    <BindInstances>icmp_ln45_fu_118_p2 add_ln45_fu_124_p2 mul_16s_32s_32_1_1_U1 icmp_ln48_fu_159_p2 icmp_ln49_fu_165_p2 select_ln50_fu_175_p3 or_ln50_fu_183_p2 select_ln50_1_fu_189_p3</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_chain_top_Pipeline_TREM_LOOP_fu_206</InstName>
+                    <ModuleName>chain_top_Pipeline_TREM_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>206</ID>
+                    <BindInstances>icmp_ln57_fu_196_p2 add_ln57_fu_202_p2 add_ln59_fu_252_p2 mul_32s_15ns_47_1_1_U7 gq_fu_283_p2 mul_32s_16s_47_1_1_U8 icmp_ln62_fu_316_p2 icmp_ln63_fu_322_p2 select_ln66_fu_338_p3 or_ln66_fu_346_p2 select_ln66_1_fu_352_p3 select_ln66_2_fu_360_p3 add_ln67_fu_231_p2 SIN_LUT64_U</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_chain_top_Pipeline_DELAY_LOOP_fu_220</InstName>
+                    <ModuleName>chain_top_Pipeline_DELAY_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>220</ID>
+                    <BindInstances>icmp_ln79_fu_256_p2 add_ln79_fu_262_p2 rp_fu_276_p2 add_ln83_fu_293_p2 rp_1_fu_299_p3 mul_32s_16s_47_1_1_U20 mul_32s_16s_47_1_1_U21 s_fu_377_p2 icmp_ln88_fu_393_p2 icmp_ln89_fu_399_p2 select_ln92_fu_409_p3 or_ln92_fu_417_p2 select_ln92_1_fu_423_p3 select_ln92_2_fu_495_p3 mul_32s_16s_47_1_1_U22 fb_fu_441_p2 icmp_ln94_fu_457_p2 icmp_ln95_fu_463_p2 select_ln96_fu_473_p3 or_ln96_fu_481_p2 select_ln96_1_fu_487_p3 add_ln97_fu_312_p2 icmp_ln97_fu_318_p2 select_ln97_fu_324_p3 delay_buf_U</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>mid1_U mid2_U sub_fu_309_p2 cmp37_fu_315_p2 icmp_ln77_fu_255_p2 icmp_ln77_1_fu_261_p2 select_ln77_fu_267_p3 or_ln77_fu_275_p2 dn_fu_281_p3 sub73_fu_336_p2 cmp88_fu_342_p2 CTRL_s_axi_U control_s_axi_U MEM_m_axi_U</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>chain_top_Pipeline_DIST_LOOP</Name>
+            <Loops>
+                <DIST_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>483</Best-caseLatency>
+                    <Average-caseLatency>483</Average-caseLatency>
+                    <Worst-caseLatency>483</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>4.830 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>4.830 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>4.830 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>481</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <DIST_LOOP>
+                        <Name>DIST_LOOP</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>480</TripCount>
+                        <Latency>481</Latency>
+                        <AbsoluteTimeLatency>4.810 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </DIST_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <DIST_LOOP>
+                            <Name>DIST_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45</SourceLocation>
+                        </DIST_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>2</DSP>
+                    <AVAIL_DSP>360</AVAIL_DSP>
+                    <UTIL_DSP>~0</UTIL_DSP>
+                    <FF>48</FF>
+                    <AVAIL_FF>141120</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>198</LUT>
+                    <AVAIL_LUT>70560</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>432</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln45_fu_118_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln45" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln45_fu_124_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln45" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_16s_32s_32_1_1_U1" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:47" STORAGESUBTYPE="" URAM="0" VARIABLE="d" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln48_fu_159_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln48" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln49_fu_165_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:49" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln49" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln50_fu_175_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:50" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln50" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="or" PRAGMA="" RTLNAME="or_ln50_fu_183_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:50" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln50" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DIST_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln50_1_fu_189_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:50" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln50_1" VISIBLE="false"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>chain_top_Pipeline_TREM_LOOP</Name>
+            <Loops>
+                <TREM_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>6.526</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>483</Best-caseLatency>
+                    <Average-caseLatency>483</Average-caseLatency>
+                    <Worst-caseLatency>483</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>4.830 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>4.830 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>4.830 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>481</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <TREM_LOOP>
+                        <Name>TREM_LOOP</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>480</TripCount>
+                        <Latency>481</Latency>
+                        <AbsoluteTimeLatency>4.810 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </TREM_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:57</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <TREM_LOOP>
+                            <Name>TREM_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:57</SourceLocation>
+                        </TREM_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>1</BRAM_18K>
+                    <AVAIL_BRAM>432</AVAIL_BRAM>
+                    <UTIL_BRAM>~0</UTIL_BRAM>
+                    <DSP>4</DSP>
+                    <AVAIL_DSP>360</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>160</FF>
+                    <AVAIL_FF>141120</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>335</LUT>
+                    <AVAIL_LUT>70560</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln57_fu_196_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:57" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln57" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln57_fu_202_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:57" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln57" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln59_fu_252_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:59" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln59" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_15ns_47_1_1_U7" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:60" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln60" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="gq_fu_283_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:60" STORAGESUBTYPE="" URAM="0" VARIABLE="gq" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_16s_47_1_1_U8" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:61" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln61" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln62_fu_316_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:62" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln62" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln63_fu_322_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:63" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln63" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln66_fu_338_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:66" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln66" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="or" PRAGMA="" RTLNAME="or_ln66_fu_346_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:66" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln66" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln66_1_fu_352_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:66" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln66_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln66_2_fu_360_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:66" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln66_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="TREM_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln67_fu_231_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:67" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln67" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="SIN_LUT64_U" SOURCE="" STORAGESIZE="16 64 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="SIN_LUT64" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>chain_top_Pipeline_DELAY_LOOP</Name>
+            <Loops>
+                <DELAY_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>484</Best-caseLatency>
+                    <Average-caseLatency>484</Average-caseLatency>
+                    <Worst-caseLatency>484</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>4.840 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>4.840 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>4.840 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>481</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <DELAY_LOOP>
+                        <Name>DELAY_LOOP</Name>
+                        <Slack>7.30</Slack>
+                        <TripCount>480</TripCount>
+                        <Latency>482</Latency>
+                        <AbsoluteTimeLatency>4.820 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>4</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </DELAY_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <DELAY_LOOP>
+                            <Name>DELAY_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79</SourceLocation>
+                        </DELAY_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>14</BRAM_18K>
+                    <AVAIL_BRAM>432</AVAIL_BRAM>
+                    <UTIL_BRAM>3</UTIL_BRAM>
+                    <DSP>6</DSP>
+                    <AVAIL_DSP>360</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>334</FF>
+                    <AVAIL_FF>141120</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>630</LUT>
+                    <AVAIL_LUT>70560</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln79_fu_256_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln79" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln79_fu_262_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln79" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="rp_fu_276_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:82" STORAGESUBTYPE="" URAM="0" VARIABLE="rp" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln83_fu_293_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:83" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln83" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="rp_1_fu_299_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:83" STORAGESUBTYPE="" URAM="0" VARIABLE="rp_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_16s_47_1_1_U20" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:85" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln85" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_16s_47_1_1_U21" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:86" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln86" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="s_fu_377_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:87" STORAGESUBTYPE="" URAM="0" VARIABLE="s" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln88_fu_393_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:88" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln88" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln89_fu_399_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:89" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln89" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln92_fu_409_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln92" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="or" PRAGMA="" RTLNAME="or_ln92_fu_417_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln92" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln92_1_fu_423_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln92_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln92_2_fu_495_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln92_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_16s_47_1_1_U22" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:93" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln93" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="fb_fu_441_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:93" STORAGESUBTYPE="" URAM="0" VARIABLE="fb" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln94_fu_457_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:94" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln94" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln95_fu_463_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:95" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln95" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln96_fu_473_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:96" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln96" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="or" PRAGMA="" RTLNAME="or_ln96_fu_481_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:96" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln96" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln96_1_fu_487_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:96" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln96_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln97_fu_312_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln97" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln97_fu_318_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln97" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="DELAY_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="select_ln97_fu_324_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:97" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln97" VISIBLE="false"/>
+                <BindNode BINDTYPE="storage" BRAM="14" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="pragma" RTLNAME="delay_buf_U" SOURCE="" STORAGESIZE="16 12000 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p" URAM="0" VARIABLE="delay_buf" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>chain_top</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>10.00</TargetClockPeriod>
+                    <ClockUncertainty>2.70</ClockUncertainty>
+                    <EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1469</Best-caseLatency>
+                    <Average-caseLatency>1469</Average-caseLatency>
+                    <Worst-caseLatency>1469</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>14.690 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>14.690 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>14.690 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1470</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:25</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>19</BRAM_18K>
+                    <AVAIL_BRAM>432</AVAIL_BRAM>
+                    <UTIL_BRAM>4</UTIL_BRAM>
+                    <DSP>12</DSP>
+                    <AVAIL_DSP>360</AVAIL_DSP>
+                    <UTIL_DSP>3</UTIL_DSP>
+                    <FF>2246</FF>
+                    <AVAIL_FF>141120</AVAIL_FF>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>3249</LUT>
+                    <AVAIL_LUT>70560</AVAIL_LUT>
+                    <UTIL_LUT>4</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="mid1_U" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:40" STORAGESIZE="16 480 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p array" URAM="0" VARIABLE="mid1" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="mid2_U" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:41" STORAGESIZE="16 480 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p array" URAM="0" VARIABLE="mid2" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub_fu_309_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="sub" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="cmp37_fu_315_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="cmp37" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln77_fu_255_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:77" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln77" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setgt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setgt" PRAGMA="" RTLNAME="icmp_ln77_1_fu_261_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:77" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln77_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="select_ln77_fu_267_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:77" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln77" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="or" PRAGMA="" RTLNAME="or_ln77_fu_275_p2" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:77" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln77" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="dn_fu_281_p3" SOURCE="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:77" STORAGESUBTYPE="" URAM="0" VARIABLE="dn" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="sub" PRAGMA="" RTLNAME="sub73_fu_336_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="sub73" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="cmp88_fu_342_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="cmp88" VISIBLE="false"/>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="CTRL" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="CTRL_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="control" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="control_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="2" BUNDLEDNAME="MEM" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="MEM_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands/>
+    <Args>
+        <Arg ArgName="in_samples" index="0" direction="inout" srcType="ap_int&lt;16&gt;*" srcSize="16">
+            <hwRefs>
+                <hwRef type="interface" interface="m_axi_MEM" name="" usage="data" direction="inout"/>
+                <hwRef type="register" interface="s_axi_control" name="in_samples_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="in_samples_2" usage="address" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="out_samples" index="1" direction="inout" srcType="ap_int&lt;16&gt;*" srcSize="16">
+            <hwRefs>
+                <hwRef type="interface" interface="m_axi_MEM" name="" usage="data" direction="inout"/>
+                <hwRef type="register" interface="s_axi_control" name="out_samples_1" usage="address" direction="in"/>
+                <hwRef type="register" interface="s_axi_control" name="out_samples_2" usage="address" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="dist_gain" index="2" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="dist_gain" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="trem_rate_step" index="3" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="trem_rate_step" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="trem_depth_q15" index="4" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="trem_depth_q15" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="delay_n" index="5" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="delay_n" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="feedback_q15" index="6" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="feedback_q15" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="mix_q15" index="7" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="register" interface="s_axi_CTRL" name="mix_q15" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="s_axi_CTRL" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="6" portPrefix="s_axi_CTRL_" paramPrefix="C_S_AXI_CTRL_">
+            <ports>
+                <port>s_axi_CTRL_ARADDR</port>
+                <port>s_axi_CTRL_ARREADY</port>
+                <port>s_axi_CTRL_ARVALID</port>
+                <port>s_axi_CTRL_AWADDR</port>
+                <port>s_axi_CTRL_AWREADY</port>
+                <port>s_axi_CTRL_AWVALID</port>
+                <port>s_axi_CTRL_BREADY</port>
+                <port>s_axi_CTRL_BRESP</port>
+                <port>s_axi_CTRL_BVALID</port>
+                <port>s_axi_CTRL_RDATA</port>
+                <port>s_axi_CTRL_RREADY</port>
+                <port>s_axi_CTRL_RRESP</port>
+                <port>s_axi_CTRL_RVALID</port>
+                <port>s_axi_CTRL_WDATA</port>
+                <port>s_axi_CTRL_WREADY</port>
+                <port>s_axi_CTRL_WSTRB</port>
+                <port>s_axi_CTRL_WVALID</port>
+            </ports>
+            <registers>
+                <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="AP_START" access="RW" description="Control signal Register for 'ap_start'."/>
+                        <field offset="1" width="1" name="AP_DONE" access="R" description="Control signal Register for 'ap_done'."/>
+                        <field offset="2" width="1" name="AP_IDLE" access="R" description="Control signal Register for 'ap_idle'."/>
+                        <field offset="3" width="1" name="AP_READY" access="R" description="Control signal Register for 'ap_ready'."/>
+                        <field offset="4" width="3" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                        <field offset="7" width="1" name="AUTO_RESTART" access="RW" description="Control signal Register for 'auto_restart'."/>
+                        <field offset="8" width="1" name="RESERVED_2" access="R" description="Reserved.  0s on read."/>
+                        <field offset="9" width="1" name="INTERRUPT" access="R" description="Control signal Register for 'interrupt'."/>
+                        <field offset="10" width="22" name="RESERVED_3" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x04" name="GIER" access="RW" description="Global Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="Enable" access="RW" description="Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x08" name="IP_IER" access="RW" description="IP Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_EN" access="RW" description="Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="1" width="1" name="CHAN1_INT_EN" access="RW" description="Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x0c" name="IP_ISR" access="RW" description="IP Interrupt Status Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_ST" access="RTOW" description="Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."/>
+                        <field offset="1" width="1" name="CHAN1_INT_ST" access="RTOW" description="Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x10" name="dist_gain" access="W" description="Data signal of dist_gain" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="dist_gain" access="W" description="Bit 31 to 0 of dist_gain"/>
+                    </fields>
+                </register>
+                <register offset="0x18" name="trem_rate_step" access="W" description="Data signal of trem_rate_step" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trem_rate_step" access="W" description="Bit 31 to 0 of trem_rate_step"/>
+                    </fields>
+                </register>
+                <register offset="0x20" name="trem_depth_q15" access="W" description="Data signal of trem_depth_q15" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="trem_depth_q15" access="W" description="Bit 31 to 0 of trem_depth_q15"/>
+                    </fields>
+                </register>
+                <register offset="0x28" name="delay_n" access="W" description="Data signal of delay_n" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="delay_n" access="W" description="Bit 31 to 0 of delay_n"/>
+                    </fields>
+                </register>
+                <register offset="0x30" name="feedback_q15" access="W" description="Data signal of feedback_q15" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="feedback_q15" access="W" description="Bit 31 to 0 of feedback_q15"/>
+                    </fields>
+                </register>
+                <register offset="0x38" name="mix_q15" access="W" description="Data signal of mix_q15" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="mix_q15" access="W" description="Bit 31 to 0 of mix_q15"/>
+                    </fields>
+                </register>
+            </registers>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="dist_gain"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="24" argName="trem_rate_step"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="32" argName="trem_depth_q15"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="40" argName="delay_n"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="48" argName="feedback_q15"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="56" argName="mix_q15"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="s_axi_control" type="axi4lite" busTypeName="aximm" mode="slave" dataWidth="32" addrWidth="6" portPrefix="s_axi_control_" paramPrefix="C_S_AXI_CONTROL_">
+            <ports>
+                <port>s_axi_control_ARADDR</port>
+                <port>s_axi_control_ARREADY</port>
+                <port>s_axi_control_ARVALID</port>
+                <port>s_axi_control_AWADDR</port>
+                <port>s_axi_control_AWREADY</port>
+                <port>s_axi_control_AWVALID</port>
+                <port>s_axi_control_BREADY</port>
+                <port>s_axi_control_BRESP</port>
+                <port>s_axi_control_BVALID</port>
+                <port>s_axi_control_RDATA</port>
+                <port>s_axi_control_RREADY</port>
+                <port>s_axi_control_RRESP</port>
+                <port>s_axi_control_RVALID</port>
+                <port>s_axi_control_WDATA</port>
+                <port>s_axi_control_WREADY</port>
+                <port>s_axi_control_WSTRB</port>
+                <port>s_axi_control_WVALID</port>
+            </ports>
+            <registers>
+                <register offset="0x10" name="in_samples_1" access="W" description="Data signal of in_samples" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="in_samples" access="W" description="Bit 31 to 0 of in_samples"/>
+                    </fields>
+                </register>
+                <register offset="0x14" name="in_samples_2" access="W" description="Data signal of in_samples" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="in_samples" access="W" description="Bit 63 to 32 of in_samples"/>
+                    </fields>
+                </register>
+                <register offset="0x1c" name="out_samples_1" access="W" description="Data signal of out_samples" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="out_samples" access="W" description="Bit 31 to 0 of out_samples"/>
+                    </fields>
+                </register>
+                <register offset="0x20" name="out_samples_2" access="W" description="Data signal of out_samples" range="32">
+                    <fields>
+                        <field offset="0" width="32" name="out_samples" access="W" description="Bit 63 to 32 of out_samples"/>
+                    </fields>
+                </register>
+            </registers>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="in_samples"/>
+                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="out_samples"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <busParams>
+                <busParam busParamName="ASSOCIATED_BUSIF">s_axi_CTRL:s_axi_control:m_axi_MEM</busParam>
+                <busParam busParamName="ASSOCIATED_RESET">ap_rst_n</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_rst_n" type="reset" busTypeName="reset" mode="slave">
+            <busParams>
+                <busParam busParamName="POLARITY">ACTIVE_LOW</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="ap_rst_n">RST</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_rst_n</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="interrupt" type="interrupt" busTypeName="interrupt" mode="master" dataWidth="1">
+            <busParams>
+                <busParam busParamName="SENSITIVITY">LEVEL_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="interrupt">INTERRUPT</portMap>
+            </portMaps>
+            <ports>
+                <port>interrupt</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="m_axi_MEM" type="axi4full" busTypeName="aximm" mode="master" dataWidth="32" addrWidth="64" portPrefix="m_axi_MEM_" paramPrefix="C_M_AXI_MEM_" preferredUsageValue="MEMORY">
+            <busParams>
+                <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
+                <busParam busParamName="NUM_WRITE_OUTSTANDING">16</busParam>
+                <busParam busParamName="MAX_READ_BURST_LENGTH">16</busParam>
+                <busParam busParamName="MAX_WRITE_BURST_LENGTH">16</busParam>
+                <busParam busParamName="MAX_BURST_LENGTH">256</busParam>
+                <busParam busParamName="PROTOCOL">AXI4</busParam>
+                <busParam busParamName="READ_WRITE_MODE">READ_WRITE</busParam>
+                <busParam busParamName="HAS_BURST">0</busParam>
+                <busParam busParamName="SUPPORTS_NARROW_BURST">0</busParam>
+            </busParams>
+            <ports>
+                <port>m_axi_MEM_ARADDR</port>
+                <port>m_axi_MEM_ARBURST</port>
+                <port>m_axi_MEM_ARCACHE</port>
+                <port>m_axi_MEM_ARID</port>
+                <port>m_axi_MEM_ARLEN</port>
+                <port>m_axi_MEM_ARLOCK</port>
+                <port>m_axi_MEM_ARPROT</port>
+                <port>m_axi_MEM_ARQOS</port>
+                <port>m_axi_MEM_ARREADY</port>
+                <port>m_axi_MEM_ARREGION</port>
+                <port>m_axi_MEM_ARSIZE</port>
+                <port>m_axi_MEM_ARUSER</port>
+                <port>m_axi_MEM_ARVALID</port>
+                <port>m_axi_MEM_AWADDR</port>
+                <port>m_axi_MEM_AWBURST</port>
+                <port>m_axi_MEM_AWCACHE</port>
+                <port>m_axi_MEM_AWID</port>
+                <port>m_axi_MEM_AWLEN</port>
+                <port>m_axi_MEM_AWLOCK</port>
+                <port>m_axi_MEM_AWPROT</port>
+                <port>m_axi_MEM_AWQOS</port>
+                <port>m_axi_MEM_AWREADY</port>
+                <port>m_axi_MEM_AWREGION</port>
+                <port>m_axi_MEM_AWSIZE</port>
+                <port>m_axi_MEM_AWUSER</port>
+                <port>m_axi_MEM_AWVALID</port>
+                <port>m_axi_MEM_BID</port>
+                <port>m_axi_MEM_BREADY</port>
+                <port>m_axi_MEM_BRESP</port>
+                <port>m_axi_MEM_BUSER</port>
+                <port>m_axi_MEM_BVALID</port>
+                <port>m_axi_MEM_RDATA</port>
+                <port>m_axi_MEM_RID</port>
+                <port>m_axi_MEM_RLAST</port>
+                <port>m_axi_MEM_RREADY</port>
+                <port>m_axi_MEM_RRESP</port>
+                <port>m_axi_MEM_RUSER</port>
+                <port>m_axi_MEM_RVALID</port>
+                <port>m_axi_MEM_WDATA</port>
+                <port>m_axi_MEM_WID</port>
+                <port>m_axi_MEM_WLAST</port>
+                <port>m_axi_MEM_WREADY</port>
+                <port>m_axi_MEM_WSTRB</port>
+                <port>m_axi_MEM_WUSER</port>
+                <port>m_axi_MEM_WVALID</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="0" channel_id="0" argName="in_samples"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="16" argName="in_samples"/>
+                <constraint constraint_type="pragma interface" mode="m_axi" register_option="0" offset="slave" latency="0" num_read_outstanding="16" num_write_outstanding="16" max_read_burst_length="16" max_write_burst_length="16" max_widen_bitwidth="0" channel_id="0" argName="out_samples"/>
+                <constraint constraint_type="bitwidth" orig_bitwidth="16" final_bitwidth="16" argName="out_samples"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="M_AXI">
+                <table>
+                    <keys size="13">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
+                    <column name="m_axi_MEM">READ_WRITE, 16 -&gt; 16, 64, 0, slave, 0, 0, 16, 16, 16, 16, BRAM=2</column>
+                </table>
+            </item>
+            <item name="S_AXILITE Interfaces">
+                <table>
+                    <keys size="5">Interface, Data Width, Address Width, Offset, Register</keys>
+                    <column name="s_axi_CTRL">32, 6, 16, 0</column>
+                    <column name="s_axi_control">32, 6, 16, 0</column>
+                </table>
+            </item>
+            <item name="S_AXILITE Registers">
+                <table>
+                    <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
+                    <column name="s_axi_CTRL">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
+                    <column name="s_axi_CTRL">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
+                    <column name="s_axi_CTRL">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
+                    <column name="s_axi_CTRL">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
+                    <column name="s_axi_CTRL">dist_gain, 0x10, 32, W, Data signal of dist_gain, </column>
+                    <column name="s_axi_CTRL">trem_rate_step, 0x18, 32, W, Data signal of trem_rate_step, </column>
+                    <column name="s_axi_CTRL">trem_depth_q15, 0x20, 32, W, Data signal of trem_depth_q15, </column>
+                    <column name="s_axi_CTRL">delay_n, 0x28, 32, W, Data signal of delay_n, </column>
+                    <column name="s_axi_CTRL">feedback_q15, 0x30, 32, W, Data signal of feedback_q15, </column>
+                    <column name="s_axi_CTRL">mix_q15, 0x38, 32, W, Data signal of mix_q15, </column>
+                    <column name="s_axi_control">in_samples_1, 0x10, 32, W, Data signal of in_samples, </column>
+                    <column name="s_axi_control">in_samples_2, 0x14, 32, W, Data signal of in_samples, </column>
+                    <column name="s_axi_control">out_samples_1, 0x1c, 32, W, Data signal of out_samples, </column>
+                    <column name="s_axi_control">out_samples_2, 0x20, 32, W, Data signal of out_samples, </column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_rst_n">reset, ap_rst_n</column>
+                    <column name="interrupt">interrupt, interrupt</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, </column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table>
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="in_samples">inout, ap_int&lt;16&gt;*</column>
+                    <column name="out_samples">inout, ap_int&lt;16&gt;*</column>
+                    <column name="dist_gain">in, int</column>
+                    <column name="trem_rate_step">in, int</column>
+                    <column name="trem_depth_q15">in, int</column>
+                    <column name="delay_n">in, int</column>
+                    <column name="feedback_q15">in, int</column>
+                    <column name="mix_q15">in, int</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table>
+                    <keys size="5">Argument, HW Interface, HW Type, HW Usage, HW Info</keys>
+                    <column name="in_samples">m_axi_MEM, interface, , channel=0</column>
+                    <column name="in_samples">s_axi_control, register, offset, name=in_samples_1 offset=0x10 range=32</column>
+                    <column name="in_samples">s_axi_control, register, offset, name=in_samples_2 offset=0x14 range=32</column>
+                    <column name="out_samples">m_axi_MEM, interface, , channel=0</column>
+                    <column name="out_samples">s_axi_control, register, offset, name=out_samples_1 offset=0x1c range=32</column>
+                    <column name="out_samples">s_axi_control, register, offset, name=out_samples_2 offset=0x20 range=32</column>
+                    <column name="dist_gain">s_axi_CTRL, register, , name=dist_gain offset=0x10 range=32</column>
+                    <column name="trem_rate_step">s_axi_CTRL, register, , name=trem_rate_step offset=0x18 range=32</column>
+                    <column name="trem_depth_q15">s_axi_CTRL, register, , name=trem_depth_q15 offset=0x20 range=32</column>
+                    <column name="delay_n">s_axi_CTRL, register, , name=delay_n offset=0x28 range=32</column>
+                    <column name="feedback_q15">s_axi_CTRL, register, , name=feedback_q15 offset=0x30 range=32</column>
+                    <column name="mix_q15">s_axi_CTRL, register, , name=mix_q15 offset=0x38 range=32</column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.1%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.">
+            <item name="Inferred Burst Summary">
+                <table>
+                    <keys size="6">HW Interface, Direction, Length, Width, Loop, Loop Location</keys>
+                    <column name="m_axi_MEM">read, 480, 16, DIST_LOOP, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45:16</column>
+                    <column name="m_axi_MEM">write, 480, 16, DELAY_LOOP, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79:17</column>
+                </table>
+            </item>
+            <item name="All M_AXI Variable Accesses">
+                <table>
+                    <keys size="10">HW Interface, Variable, Access Location, Direction, Burst Status, Length, Loop, Loop Location, Resolution, Problem</keys>
+                    <column name="m_axi_MEM">in_samples, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:47:12, read, Widen Fail, , DIST_LOOP, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45:16, 214-353, Could not widen since type i16 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_MEM">in_samples, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:47:12, read, Inferred, 480, DIST_LOOP, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:45:16, , </column>
+                    <column name="m_axi_MEM">out_samples, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92:24, write, Widen Fail, , DELAY_LOOP, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79:17, 214-353, Could not widen since type i16 size is greater than or equal to the max_widen_bitwidth threshold of 0</column>
+                    <column name="m_axi_MEM">out_samples, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:92:24, write, Inferred, 480, DELAY_LOOP, ../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:79:17, , </column>
+                </table>
+            </item>
+        </section>
+    </ReportBurst>
+    <PragmaReport>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:30" status="valid" parentFunction="chain_top" variable="return" isDirective="0" options="s_axilite port=return bundle=CTRL"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:31" status="valid" parentFunction="chain_top" variable="dist_gain" isDirective="0" options="s_axilite port=dist_gain bundle=CTRL"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:32" status="valid" parentFunction="chain_top" variable="trem_rate_step" isDirective="0" options="s_axilite port=trem_rate_step bundle=CTRL"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:33" status="valid" parentFunction="chain_top" variable="trem_depth_q15" isDirective="0" options="s_axilite port=trem_depth_q15 bundle=CTRL"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:34" status="valid" parentFunction="chain_top" variable="delay_n" isDirective="0" options="s_axilite port=delay_n bundle=CTRL"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:35" status="valid" parentFunction="chain_top" variable="feedback_q15" isDirective="0" options="s_axilite port=feedback_q15 bundle=CTRL"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:36" status="valid" parentFunction="chain_top" variable="mix_q15" isDirective="0" options="s_axilite port=mix_q15 bundle=CTRL"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:37" status="valid" parentFunction="chain_top" variable="in_samples" isDirective="0" options="m_axi depth=480 port=in_samples offset=slave bundle=MEM"/>
+        <Pragma type="interface" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:38" status="valid" parentFunction="chain_top" variable="out_samples" isDirective="0" options="m_axi depth=480 port=out_samples offset=slave bundle=MEM"/>
+        <Pragma type="pipeline" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:46" status="valid" parentFunction="chain_top" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="pipeline" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:58" status="valid" parentFunction="chain_top" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="resource" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:75" status="warning" parentFunction="chain_top" variable="delay_buf" isDirective="0" options="variable=delay_buf core=RAM_2P_BRAM">
+            <Msg msg_id="207-5538" msg_severity="WARNING" msg_body="'Resource pragma' is deprecated, use 'bind_op/bind_storage pragma' instead"/>
+        </Pragma>
+        <Pragma type="pipeline" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:80" status="valid" parentFunction="chain_top" variable="" isDirective="0" options=""/>
+        <Pragma type="dependence" location="../../Documents/GitHub/EECE4632-Project/vitis_hls/build1_pipeline/audio_effects.cpp:81" status="valid" parentFunction="chain_top" variable="delay_buf" isDirective="0" options="variable=delay_buf inter false"/>
+    </PragmaReport>
+</profile>
+

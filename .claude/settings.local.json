@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-tree *)",
+      "Bash(grep -iE '\\\\.\\(cpp|h|hpp|tcl|bit|hwh|xsa|ltx\\)$')"
+    ]
+  }
+}
